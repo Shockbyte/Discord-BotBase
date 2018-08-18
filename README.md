@@ -2,10 +2,14 @@
 The bot base for all bots made by Shockbyte
 
 ## About
+This is the bot base that we use over at [Shockbyte](https://shockbyte.com) \for our [Discord Server](https://discord.gg/7epCUD4). This is developed and maintained by the [Shockbyte Team](https://github.com/Shockbyte).
+
+This lib helps with basic bot setup and with commands, you don't need to setup commands or deal with login you can just use this lib instead. It also has utils for things like getting what a user has inputted form just the args.
 
 ## Usage
 
 ### Setup config file
+Making and using the configuration is very simple, all you need to do is create a new JSONConfig with the config name (and location is applicable). Then all you need to do is get something from the specific path where . equals an inner object. For example, if it is "bot.token" it will look for a "bot" object and go for "token". This returns an Optioanl so you can check if it exists and also get the value (or else return another).
 
 ```java
 public void init() {
@@ -25,7 +29,7 @@ Starting the bot is super simple with this bot base, all you need to do is exten
 
 ```java
 public void init() {
-    init(config.token, config.prefix);
+    init(config.getString("bot.token").get(), config.getString("bot.prefix").get());
 }
 
 @Override
@@ -39,7 +43,7 @@ If you wish to connec to NySQL and execute queries in that it is very simple, al
 
 ```java
 public void init() {
-    setupMySQL(config.username, )
+    setupMySQL(config.getString("mysql.host").get(), config.getInt("mysql.port").get(), config.getString("mysql.username").get(), config.getString("mysql.password").get());
 }
 ```
 
