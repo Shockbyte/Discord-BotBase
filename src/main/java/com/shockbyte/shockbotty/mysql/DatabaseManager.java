@@ -15,7 +15,7 @@ public class DatabaseManager {
 
     private static HikariDataSource dataSource;
 
-    public static void init(String host, short port, String username, String password) {
+    public static void init(String host, int port, String username, String password) {
         HikariConfig config = new HikariConfig();
 
         MysqlDataSource mysqlDataSource = new MysqlDataSource();

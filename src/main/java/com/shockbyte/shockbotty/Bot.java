@@ -1,9 +1,6 @@
 package com.shockbyte.shockbotty;
 
-import com.mysql.cj.jdbc.MysqlDataSource;
 import com.shockbyte.shockbotty.mysql.DatabaseManager;
-import com.zaxxer.hikari.HikariConfig;
-import com.zaxxer.hikari.HikariDataSource;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
@@ -43,7 +40,7 @@ public abstract class Bot {
 
     public abstract void run();
 
-    public void setupMySQL(String host, short port, String username, String password) {
+    public void setupMySQL(String host, int port, String username, String password) {
         DatabaseManager.init(host, port, username, password);
     }
 
