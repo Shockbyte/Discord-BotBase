@@ -33,12 +33,12 @@ public class BotListener implements EventListener {
 
         for (Command cmd : Bot.getInstance().getCommands()) {
             if (cmd.getCommand().equalsIgnoreCase(command)) {
-                cmd.onCommand(e.getMember().getUser(), e.getMember(), e.getGuild(), args);
+                cmd.onCommand(e.getMember().getUser(), e.getMember(), e.getChannel(), e.getGuild(), args);
                 break;
             }
             for (String alias : cmd.getAliases()) {
                 if (alias.equalsIgnoreCase(command)) {
-                    cmd.onCommand(e.getMember().getUser(), e.getMember(), e.getGuild(), args);
+                    cmd.onCommand(e.getMember().getUser(), e.getMember(), e.getChannel(), e.getGuild(), args);
                     break;
                 }
             }

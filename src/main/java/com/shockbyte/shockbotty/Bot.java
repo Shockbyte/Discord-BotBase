@@ -30,7 +30,7 @@ public abstract class Bot {
         instance = this;
         this.prefix = botPrefix;
         try {
-            this.client = builder.addEventListener().build();
+            this.client = builder.addEventListener(new BotListener()).build();
         } catch (LoginException e) {
             logger.error("There was an issue logging in: {}", e.getMessage(), e);
         }

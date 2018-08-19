@@ -2,7 +2,7 @@
 The bot base for all bots made by Shockbyte
 
 ## About
-This is the bot base that we use over at [Shockbyte](https://shockbyte.com) \for our [Discord Server](https://discord.gg/7epCUD4). This is developed and maintained by the [Shockbyte Team](https://github.com/Shockbyte).
+This is the bot base that we use over at [Shockbyte](https://shockbyte.com) for our [Discord Server](https://discord.gg/7epCUD4). This is developed and maintained by the [Shockbyte Team](https://github.com/Shockbyte).
 
 This lib helps with basic bot setup and with commands, you don't need to setup commands or deal with login you can just use this lib instead. It also has utils for things like getting what a user has inputted form just the args.
 
