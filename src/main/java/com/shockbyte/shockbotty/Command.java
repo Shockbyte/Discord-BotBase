@@ -1,15 +1,15 @@
 package com.shockbyte.shockbotty;
 
-import net.dv8tion.jda.core.entities.Channel;
 import net.dv8tion.jda.core.entities.Guild;
 import net.dv8tion.jda.core.entities.Member;
+import net.dv8tion.jda.core.entities.MessageChannel;
 import net.dv8tion.jda.core.entities.User;
 
 public interface Command {
 
     // TODO: Decide if I want to go Flare2 route and have a CommandContext
 
-    void onCommand(User user, Member member, Channel channel, Guild guild, String[] args);
+    void onCommand(User user, Member member, MessageChannel channel, Guild guild, String[] args);
 
     String getCommand();
 
