@@ -59,4 +59,8 @@ public abstract class Bot {
     public String getPrefix() {
         return this.prefix;
     }
+
+    public JDA getClient() {
+        return client;
+    }
 }
