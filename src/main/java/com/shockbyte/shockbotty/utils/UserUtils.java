@@ -77,6 +77,14 @@ public class UserUtils {
         return null;
     }
 
+    public static String getTag(User user) {
+        return user.getName() + "#" + user.getDiscriminator();
+    }
+
+    public static String getIdentifier(User user) {
+        return getTag(user) + " (" + user.getIdLong() + ")";
+    }
+
     private static Bot bot() {
         return instance == null ? instance = Bot.getInstance() : instance;
     }
