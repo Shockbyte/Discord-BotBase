@@ -93,6 +93,17 @@ public class UserUtils {
         return null;
     }
 
+    @Nullable
+    public static User getOrRetrieve(long id) {
+        User user = getUser(id);
+        if (user != null) return user;
+
+        user = bot().getClient().retrieveUserById(id).complete();
+        if (user != null) return user;
+
+        return null;
+    }
+
     public static String getTag(User user) {
         return user.getName() + "#" + user.getDiscriminator();
     }
