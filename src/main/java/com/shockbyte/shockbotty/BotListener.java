@@ -29,8 +29,8 @@ public class BotListener implements EventListener {
         String[] args = new String[0];
 
         if (command.contains(" ")) {
+            command = command.substring(0, command.indexOf(" "));
             args = spacePattern.split(message.substring(message.indexOf(" ")+1));
-            command = command.substring(command.indexOf(" ")-1);
         }
 
         CommandContext context = new CommandContext(e.getGuild().getIdLong(), e.getChannel().getIdLong(),
