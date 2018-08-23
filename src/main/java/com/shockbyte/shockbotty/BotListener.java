@@ -1,5 +1,7 @@
 package com.shockbyte.shockbotty;
 
+import com.shockbyte.shockbotty.context.CommandContext;
+import com.shockbyte.shockbotty.context.GuildContext;
 import net.dv8tion.jda.core.events.Event;
 import net.dv8tion.jda.core.events.ReadyEvent;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
@@ -31,14 +33,17 @@ public class BotListener implements EventListener {
             command = command.substring(command.indexOf(" ")-1);
         }
 
+        CommandContext context = new CommandContext(e.getGuild().getIdLong(), e.getChannel().getIdLong(),
+                e.getMember().getUser().getIdLong(), command, args);
+
         for (Command cmd : Bot.getInstance().getCommands()) {
             if (cmd.getCommand().equalsIgnoreCase(command)) {
-                cmd.onCommand(e.getMember().getUser(), e.getMember(), e.getChannel(), e.getGuild(), args);
+                cmd.onCommand(context);
                 break;
             }
             for (String alias : cmd.getAliases()) {
                 if (alias.equalsIgnoreCase(command)) {
-                    cmd.onCommand(e.getMember().getUser(), e.getMember(), e.getChannel(), e.getGuild(), args);
+                    cmd.onCommand(context);
                     break;
                 }
             }
