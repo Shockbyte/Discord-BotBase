@@ -3,6 +3,7 @@ package com.shockbyte.shockbotty.utils;
 import com.shockbyte.shockbotty.Bot;
 import net.dv8tion.jda.core.entities.Guild;
 import net.dv8tion.jda.core.entities.Member;
+import net.dv8tion.jda.core.entities.Role;
 import net.dv8tion.jda.core.entities.User;
 
 import javax.annotation.Nonnull;
@@ -83,6 +84,14 @@ public class UserUtils {
 
     public static String getIdentifier(User user) {
         return getTag(user) + " (" + user.getIdLong() + ")";
+    }
+
+    public static boolean hasRole(Member member, long roleId) {
+        for (Role role : member.getRoles())
+            if (role.getIdLong() == roleId)
+                return true;
+
+        return false;
     }
 
     private static Bot bot() {
