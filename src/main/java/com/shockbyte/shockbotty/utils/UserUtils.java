@@ -10,6 +10,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class UserUtils {
 
     // Steps to find a user:
@@ -19,6 +20,7 @@ public class UserUtils {
 
     private static Bot instance;
 
+    @Nullable
     public static User getUser(@Nonnull String s) {
         return getUser(s, null);
     }
@@ -75,6 +77,19 @@ public class UserUtils {
         }
 
         // We'll get 'em next time!
+        return null;
+    }
+
+    @Nullable
+    public static User getUser(long l) {
+        return bot().getClient().getUserCache().getElementById(l);
+    }
+
+    @Nullable
+    public static User getUser(long l, Guild g) {
+        Member member = g.getMemberCache().getElementById(l);
+        if (member != null)
+            return member.getUser();
         return null;
     }
 
