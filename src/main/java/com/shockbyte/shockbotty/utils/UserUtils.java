@@ -26,7 +26,7 @@ public class UserUtils {
     public static User getUser(@Nonnull String s, @Nullable Guild g) {
         long id = -1;
         try {
-            id = Long.parseLong(s);
+            id = Long.parseLong(s.replaceAll("[<@!>]", "")); // Remove any chars which may be there if it's a mention
         } catch (NumberFormatException ignored) {
         }
 
