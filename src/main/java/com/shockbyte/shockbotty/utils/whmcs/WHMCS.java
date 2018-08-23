@@ -1,4 +1,4 @@
-package com.shockbyte.staffbot.whmcs;
+package com.shockbyte.shockbotty.utils.whmcs;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;

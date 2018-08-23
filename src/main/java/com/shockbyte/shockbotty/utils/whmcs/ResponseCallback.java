@@ -1,4 +1,4 @@
-package com.shockbyte.staffbot.whmcs;
+package com.shockbyte.shockbotty.utils.whmcs;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
